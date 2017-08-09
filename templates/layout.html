@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="{{ url_for('static', filename='events.js')}}"></script>
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <title>Seth's Daily Briefing</title>
+  </head>
+  <body>
+    <nav role="navigation">
+      <div class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="brand">
+          <a href="{{ url_for('index') }}"><h1 class="logo" id="this-link">Daily Briefing</h1></a>
+        </div>
+
+          <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <div id="menu-main-menu" class="nav navbar-nav ">
+              <a id="weather_link" class="nav navbar-nav" href="/weather">Weather</a>
+              <a id="forecast_link" class="nav navbar-nav" href="/forecast">Forecast</a>
+              <a id="headlines_link" class="nav navbar-nav" href="/headlines">Headlines</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      </nav>
+    <div class="container">
+      {%block content%}
+      {%endblock%}
+    </div>
+  </body>
+</html>

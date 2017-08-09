@@ -1,0 +1,6 @@
+<h1>Headlines</h1>
+{% for h in hls %}
+  <div class="briefs">
+    <a href='{{ hls[h] }}' target="_blank">{{ h }}</a>
+  </div><br>
+{% endfor %}
