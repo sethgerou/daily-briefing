@@ -1,7 +1,13 @@
 <h1>Forecast</h1>
-    {% for f in fcast %}
+    {% for day in fcast %}
     <div class="">
-      {{ f }}
+      <div class="">
+        <strong>{{ day }}:</strong> {{ fcast[day]['cond'] }}, High: <strong>{{ fcast[day]['high'] }}</strong> Low: <strong>{{ fcast[day]['low'] }}</strong> Precipitation:  <strong>{{ fcast[day]['precip'] }}</strong>
+      </div>
     </div>
     <br>
     {% endfor %}
+<div class="">
+  Forecast info provided by:
+  <img src="static/images/wundergroundLogo_4c_horz.jpg" alt="wunderground logo" style="width:120px;">
+</div><br>

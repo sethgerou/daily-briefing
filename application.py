@@ -1,26 +1,32 @@
 from flask import Flask, render_template
 import scraping
+import weather
 
-app=Flask(__name__)
-@app.route('/')
+application=Flask(__name__)
+
+@application.route('/')
 def index():
     return render_template("index.html")
 
-@app.route('/headlines/')
+@application.route('/headlines/')
 def headlines():
     heads=scraping.get_headlines()
     return render_template("headlines.html", hls=heads)
 
-@app.route('/weather/')
+@application.route('/weather/')
 def current():
-    curr=scraping.get_weather(98019)
+    curr=weather.get_weather(98019)
     return render_template("weather.html", curr=curr[0])
 
-@app.route('/forecast/')
+@application.route('/forecast/')
 def forecast():
-    fcast=scraping.get_weather(98019)
-    print(fcast[1])
+    fcast=weather.get_weather(98019)
     return render_template("forecast.html", fcast=fcast[1])
 
+@application.route('/about/')
+def about():
+    return render_template("about.html")
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    application.debug = True
+    application.run()
