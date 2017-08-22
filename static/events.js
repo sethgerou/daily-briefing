@@ -1,5 +1,4 @@
 $(function() {
-
   $(document).on('click', '#weather_link', function (event) {
     event.preventDefault();
     $('#weather').html('<p class="loading">( loading weather... )</p>')
@@ -33,13 +32,23 @@ $(function() {
     })
   });
 
+  $(document).on('click', '#about_link', function (event) {
+    event.preventDefault();
+    $.ajax({
+      url: '/about',
+      method: 'get'
+    }).done(function (response) {
+      $('#about').html(response)
+    })
+  });
+
   if($('#weather').children()[0].textContent === '( loading weather... )') {
     $.ajax({
       async: "true",
       url: '/weather',
       method: 'get'
     }).done(function (response) {
-      $('#weather').html(response)
+      $('#weather').html(response);
     })
   }
 
