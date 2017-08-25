@@ -1,7 +1,7 @@
 import requests
 
 def get_weather(zip="98019"):
-    wujson = requests.get("http://api.wunderground.com/api/<weather_underground_api_key>/conditions/forecast/q/%s.json" % zip)
+    wujson = requests.get("http://api.wunderground.com/api/f6d493539e73673c/conditions/forecast/q/%s.json" % zip)
     wdata = wujson.json()
 
     current = wdata['current_observation']
@@ -14,17 +14,20 @@ def get_weather(zip="98019"):
 
     cur_display_data = (curtemp, curhum, curcond, curwins, curwdir)
 
-    fcast_display_data = {}
+    fcast_display_data = []
 
     days = wdata['forecast']['simpleforecast']['forecastday']
 
     for day in days:
-        weekday = day['date']['weekday']
-        fcast_display_data[weekday] = {
+
+        fcast_display_data.append(
+            {
+            'weekday': day['date']['weekday'],
             'cond': day['conditions'],
             'high': day['high']['fahrenheit'],
             'low': day['low']['fahrenheit'],
             'precip': day['qpf_allday']['in']
-        }
+            }
+        )
 
     return (cur_display_data, fcast_display_data)

@@ -1,13 +1,13 @@
 <h1>Forecast</h1>
+<div class="section">
     {% for day in fcast %}
-    <div class="">
-      <div class="">
-        <strong>{{ day }}:</strong> {{ fcast[day]['cond'] }}, High: <strong>{{ fcast[day]['high'] }}</strong> Low: <strong>{{ fcast[day]['low'] }}</strong> Precipitation:  <strong>{{ fcast[day]['precip'] }}</strong>
+      <div class="line">
+        {{ day['weekday'] }}: <span class="highlight">{{ day['cond'] }}</span>, High: <span class="highlight">{{ day['high'] }}</span> Low: <span class="highlight">{{ day['low'] }}</span> Rain:  <span class="highlight">{{ day['precip'] }}in</span>
       </div>
     </div>
     <br>
     {% endfor %}
 <div class="">
-  Forecast info provided by:
+  info provided by:
   <img src="static/images/wundergroundLogo_4c_horz.jpg" alt="wunderground logo" style="width:120px;">
 </div><br>

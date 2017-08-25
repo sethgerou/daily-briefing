@@ -3,6 +3,18 @@ h1 {
   text-transform: uppercase;
 }
 
+body {
+  font-size: 1.5em;
+}
+
+#forecast {
+  display: inline-block;
+}
+
+#menu-main-menu {
+  width: 100%;
+}
+
 .navbar-static-top {
   background-color: #8C131C;
 }
@@ -22,21 +34,23 @@ h1 {
   text-transform: uppercase;
 }
 
-#menu-main-menu {
-  width: 100%;
+.line {
+  padding: 0 .5em;
+  border-bottom: 1px solid grey;
+  font-weight: bold;
 }
 
-@keyframes pulse {
-  from {color: #FFFFFF;}
-  to {color: #777777;}
+.hline {
+  padding: .5em 0;
 }
 
-.loading {
-  color: #777777;
-  animation-name: pulse;
-  animation-duration: 2s;
-  animation-iteration-count: 10;
-  animation-direction: alternate;
+.wline {
+  padding: .5em 0;
+  font-weight: bold;
+}
+
+.highlight {
+  color: blue;
 }
 
 .briefs a, .briefs a:hover, .briefs a:visited, .briefs a:active, .briefs a:link {
@@ -53,6 +67,19 @@ h1 {
 
 .briefs h1 {
   margin-top: 0;
+}
+
+@keyframes pulse {
+  from {color: #FFFFFF;}
+  to {color: #777777;}
+}
+
+.loading {
+  color: #777777;
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-iteration-count: 10;
+  animation-direction: alternate;
 }
 
 @media (max-width: 800px) {
