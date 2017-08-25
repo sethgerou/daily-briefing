@@ -1,11 +1,13 @@
 <h1>Headlines</h1>
 {% for h in hls %}
   <div class="briefs">
-    <a href='{{ hls[h] }}' target="_blank">{{ h }}</a>
+    <div class="hline">
+      <strong><a href='{{ hls[h] }}' target="_blank">{{ h }}</a></strong>
+    </div>
   </div><br>
 {% endfor %}
 <div class="">
-  Headline info provided by:
+  info provided by:
   <img src="static/images/msnbc.png" alt="msnbc logo" style="width:120px;">
 </div>
 <br>
