@@ -3,6 +3,12 @@ h1 {
   text-transform: uppercase;
 }
 
+h3 {
+  color: #FFFFFF;
+  text-emphasis: bold;
+  text-transform: capitalize;
+}
+
 body {
   font-size: 1.5em;
 }
@@ -40,9 +46,9 @@ body {
   font-weight: bold;
 }
 
-.hline {
+/*.hline {
   padding: .5em 0;
-}
+}*/
 
 .wline {
   padding: .5em 0;

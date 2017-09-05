@@ -1,7 +1,8 @@
 import requests
+from keys import wunderground
 
-def get_weather(zip="98019"):
-    wujson = requests.get("http://api.wunderground.com/api/f6d493539e73673c/conditions/forecast/q/%s.json" % zip)
+def get_weather(zc="98019"):
+    wujson = requests.get("http://api.wunderground.com/api/%s/conditions/forecast/q/%s.json" % (wunderground, zc))
     wdata = wujson.json()
 
     current = wdata['current_observation']

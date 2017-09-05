@@ -29,6 +29,7 @@
           <span class="icon-bar"></span>
         </button>
         <div class="brand">
+          <h3> {{ current_date }} </h3>
           <a href="{{ url_for('index') }}"><h1 class="logo" id="this-link">Seth's Personal Daily Briefing</h1></a>
         </div>
 
@@ -36,7 +37,10 @@
             <div id="menu-main-menu" class="nav navbar-nav ">
               <a id="weather_link" class="nav navbar-nav" href="/weather">Weather </a>
               <a id="forecast_link" class="nav navbar-nav" href="/forecast">Forecast </a>
-              <a id="headlines_link" class="nav navbar-nav" href="/headlines">Headlines</a>
+              <a id="CNN_link" class="nav navbar-nav" href="/headlines">CNN</a>
+              <a id="ENG_link" class="nav navbar-nav" href="/headlines">Engadget</a>
+              <a id="NYT_link" class="nav navbar-nav" href="/headlines">NYT</a>
+              <a id="WSJ_link" class="nav navbar-nav" href="/headlines">WSJ</a></a>
               <a id="about_link" class="nav navbar-nav" href="/headlines">About</a>
             </div>
           </div>
