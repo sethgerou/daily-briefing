@@ -21,14 +21,47 @@ $(function() {
     })
   });
 
-  $(document).on('click', '#headlines_link', function (event) {
+  $(document).on('click', '#CNN_link', function (event) {
     event.preventDefault();
-    $('#headlines').html('<p class="loading">( loading headlines... )</p>')
+    $('#CNN').html('<p class="loading">( loading CNN... )</p>')
     $.ajax({
-      url: '/headlines',
+      url: '/headlines/CNN',
       method: 'get'
     }).done(function (response) {
-      $('#headlines').html(response)
+      $('#CNN').html(response)
+    })
+  });
+
+  $(document).on('click', '#ENG_link', function (event) {
+    event.preventDefault();
+    $('#ENG').html('<p class="loading">( loading engadget... )</p>')
+    $.ajax({
+      url: '/headlines/engadget',
+      method: 'get'
+    }).done(function (response) {
+      $('#ENG').html(response)
+    })
+  });
+
+  $(document).on('click', '#NYT_link', function (event) {
+    event.preventDefault();
+    $('#NYT').html('<p class="loading">( loading New York Times... )</p>')
+    $.ajax({
+      url: '/headlines/the-new-york-times',
+      method: 'get'
+    }).done(function (response) {
+      $('#NYT').html(response)
+    })
+  });
+
+  $(document).on('click', '#WSJ_link', function (event) {
+    event.preventDefault();
+    $('#WSJ').html('<p class="loading">(loading Wall Street Journal... )</p>')
+    $.ajax({
+      url: '/headlines/the-wall-street-journal',
+      method: 'get'
+    }).done(function (response) {
+      $('#WSJ').html(response)
     })
   });
 
@@ -61,12 +94,39 @@ $(function() {
     })
   }
 
-  if($('#headlines').children()[0].textContent === '( loading headlines... )') {
+  if($('#CNN').children()[0].textContent === '( loading CNN... )') {
     $.ajax({
-      url: '/headlines',
+      url: '/headlines/CNN',
       method: 'get'
     }).done(function (response) {
-      $('#headlines').html(response)
+      $('#CNN').html(response)
+    })
+  }
+
+  if($('#ENG').children()[0].textContent === '( loading engadget... )') {
+    $.ajax({
+      url: '/headlines/engadget',
+      method: 'get'
+    }).done(function (response) {
+      $('#ENG').html(response)
+    })
+  }
+
+  if($('#NYT').children()[0].textContent === '( loading New York Times... )') {
+    $.ajax({
+      url: '/headlines/the-new-york-times',
+      method: 'get'
+    }).done(function (response) {
+      $('#NYT').html(response)
+    })
+  }
+
+  if($('#WSJ').children()[0].textContent === '(loading Wall Street Journal... )') {
+    $.ajax({
+      url: '/headlines/the-wall-street-journal',
+      method: 'get'
+    }).done(function (response) {
+      $('#WSJ').html(response)
     })
   }
 

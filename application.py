@@ -1,17 +1,20 @@
 from flask import Flask, render_template
 import scraping
 import weather
+from datetime import datetime
+from headlines import get_articles
 
 application=Flask(__name__)
 
 @application.route('/')
 def index():
-    return render_template("index.html")
+    formatted_datetime = datetime.now().strftime("%A, %B%e, %G")
+    return render_template("index.html", current_date=formatted_datetime)
 
-@application.route('/headlines/')
-def headlines():
-    heads=scraping.get_headlines()
-    return render_template("headlines.html", hls=heads)
+@application.route('/headlines/<src>')
+def headlines(src):
+    heads=get_articles(src)
+    return render_template("headlines.html", hls=heads, src=src)
 
 @application.route('/weather/')
 def current():
